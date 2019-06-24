@@ -10,7 +10,7 @@ spring:
       server:
         git:
           uri: https://github.com/nqqdegit/newsres.git
-          searchPaths: newsres #配置git仓库地址
+          searchPaths: repo #配置git仓库地址
           username: nqqdegit #访问git仓库的用户名
           password: Nqq65721371.. #访问git仓库的用户密码
         label: master #配置仓库的分支
