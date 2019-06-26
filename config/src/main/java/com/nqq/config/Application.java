@@ -12,6 +12,7 @@ package com.nqq.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
@@ -23,8 +24,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @create 2019/6/24
  * @since 1.0.0
  */
-@SpringBootApplication
-@EnableEurekaClient
+@SpringCloudApplication
 @EnableConfigServer
 public class Application {
 

@@ -2,18 +2,25 @@ server:
   port: 8888
 spring:
   application:
-    name: register
+    name: eurekaserver
   profiles:
     active: dev
+  cloud:
+    inetutils:
+      preferred-networks: 127.0.0.1
+    client:
+      ipAddress: 127.0.0.1
 eureka:
   server:
+    peer-node-read-timeout-ms: 3000
     enable-self-preservation: true
   instance:
-    prefer-ip-address: false
-    hostname: ${spring.cloud.client.ipAddress}
+    prefeIpAaddress: false
     instanceId: ${spring.cloud.client.ipAddress}:${server.port}
   client:
-      registerWithEureka: false
-      fetchRegistry: false
-      serviceUrl:
-        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    registerWithEureka: true
+    fetchRegistry: false
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8888/eureka/
